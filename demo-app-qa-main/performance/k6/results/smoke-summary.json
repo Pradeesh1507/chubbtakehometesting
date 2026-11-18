@@ -1,0 +1,267 @@
+{
+    "metrics": {
+        "http_req_sending": {
+            "max": 1.0306,
+            "avg": 0.024538095238095237,
+            "min": 0,
+            "med": 0,
+            "p(90)": 0,
+            "p(95)": 0
+        },
+        "http_req_failed": {
+            "passes": 0,
+            "fails": 42,
+            "thresholds": {
+                "rate<0.01": false
+            },
+            "value": 0
+        },
+        "data_sent": {
+            "count": 78996,
+            "rate": 2485.499365882396
+        },
+        "checks": {
+            "passes": 84,
+            "fails": 0,
+            "thresholds": {
+                "rate>0.99": false
+            },
+            "value": 1
+        },
+        "http_req_connecting": {
+            "p(95)": 0,
+            "max": 0.537,
+            "avg": 0.012785714285714286,
+            "min": 0,
+            "med": 0,
+            "p(90)": 0
+        },
+        "vus_max": {
+            "value": 1,
+            "min": 1,
+            "max": 1
+        },
+        "http_req_duration": {
+            "avg": 184.36545000000004,
+            "min": 18.5556,
+            "med": 117.0051,
+            "p(90)": 259.5182699999999,
+            "p(95)": 287.98803999999996,
+            "max": 2988.577,
+            "thresholds": {
+                "p(95)<1500": false
+            }
+        },
+        "http_req_blocked": {
+            "p(95)": 0,
+            "max": 12.7901,
+            "avg": 0.3045261904761905,
+            "min": 0,
+            "med": 0,
+            "p(90)": 0
+        },
+        "iteration_duration": {
+            "avg": 5297.124666666667,
+            "min": 4532.3685,
+            "med": 4823.4328000000005,
+            "p(90)": 6492.8917,
+            "p(95)": 7193.836,
+            "max": 7894.7803
+        },
+        "http_req_receiving": {
+            "avg": 0.6604857142857143,
+            "min": 0,
+            "med": 0.6468,
+            "p(90)": 1.2879800000000001,
+            "p(95)": 1.4963249999999992,
+            "max": 1.7301
+        },
+        "http_req_waiting": {
+            "avg": 183.6804261904762,
+            "min": 17.7238,
+            "med": 116.3848,
+            "p(90)": 258.1077199999999,
+            "p(95)": 287.0978649999999,
+            "max": 2986.9671
+        },
+        "data_received": {
+            "count": 85491,
+            "rate": 2689.855515325484
+        },
+        "group_duration": {
+            "avg": 323.8096041666667,
+            "min": 113.7857,
+            "med": 198.91129999999998,
+            "p(90)": 323.88773,
+            "p(95)": 339.64581499999997,
+            "max": 3003.0196
+        },
+        "http_req_tls_handshaking": {
+            "avg": 0,
+            "min": 0,
+            "med": 0,
+            "p(90)": 0,
+            "p(95)": 0,
+            "max": 0
+        },
+        "iterations": {
+            "count": 6,
+            "rate": 0.1887816623030834
+        },
+        "http_reqs": {
+            "count": 42,
+            "rate": 1.321471636121584
+        },
+        "vus": {
+            "value": 1,
+            "min": 1,
+            "max": 1
+        },
+        "http_req_duration{expected_response:true}": {
+            "med": 117.0051,
+            "p(90)": 259.5182699999999,
+            "p(95)": 287.98803999999996,
+            "max": 2988.577,
+            "avg": 184.36545000000004,
+            "min": 18.5556
+        }
+    },
+    "root_group": {
+        "path": "",
+        "id": "d41d8cd98f00b204e9800998ecf8427e",
+        "groups": {
+            "auth: login": {
+                "name": "auth: login",
+                "path": "::auth: login",
+                "id": "bff179611af9306d2afbe88a740f11b4",
+                "groups": {},
+                "checks": {
+                        "login status is 200": {
+                            "name": "login status is 200",
+                            "path": "::auth: login::login status is 200",
+                            "id": "4b9f1623dff3121659d36b0eda0f268b",
+                            "passes": 6,
+                            "fails": 0
+                        },
+                        "login returns a user id": {
+                            "name": "login returns a user id",
+                            "path": "::auth: login::login returns a user id",
+                            "id": "14d878fd624cc5f1ee79c1c550fcfaea",
+                            "passes": 6,
+                            "fails": 0
+                        }
+                    }
+            },
+            "claims: list": {
+                "path": "::claims: list",
+                "id": "ba23e1be6c5c6ccb23e3ac333a360c0b",
+                "groups": {},
+                "checks": {
+                        "login status is 200": {
+                            "name": "login status is 200",
+                            "path": "::claims: list::login status is 200",
+                            "id": "2358a46f08aa2681b4352b3580715bf7",
+                            "passes": 6,
+                            "fails": 0
+                        },
+                        "login returns a user id": {
+                            "name": "login returns a user id",
+                            "path": "::claims: list::login returns a user id",
+                            "id": "bc473230b0387b6a4cf238bbd946cdb8",
+                            "passes": 6,
+                            "fails": 0
+                        },
+                        "list claims status is 200": {
+                            "passes": 6,
+                            "fails": 0,
+                            "name": "list claims status is 200",
+                            "path": "::claims: list::list claims status is 200",
+                            "id": "5a0bdb2cddb419dec6c2302d3dbb0d74"
+                        },
+                        "list claims returns an array": {
+                            "name": "list claims returns an array",
+                            "path": "::claims: list::list claims returns an array",
+                            "id": "33a8dac089196a3f57b61e3ed9dfd5f9",
+                            "passes": 6,
+                            "fails": 0
+                        }
+                    },
+                "name": "claims: list"
+            },
+            "claims: submit": {
+                "checks": {
+                    "login status is 200": {
+                        "name": "login status is 200",
+                        "path": "::claims: submit::login status is 200",
+                        "id": "b9a981a3487349c2565e32ef69f5d2c0",
+                        "passes": 6,
+                        "fails": 0
+                    },
+                    "login returns a user id": {
+                        "name": "login returns a user id",
+                        "path": "::claims: submit::login returns a user id",
+                        "id": "89ac042e3206f196dffd4cd52f9e6fbe",
+                        "passes": 6,
+                        "fails": 0
+                    },
+                    "submit claim status is 201": {
+                        "path": "::claims: submit::submit claim status is 201",
+                        "id": "b0d83df1e102a11f667c5fe60afed45d",
+                        "passes": 6,
+                        "fails": 0,
+                        "name": "submit claim status is 201"
+                    },
+                    "submit claim returns a claimId": {
+                        "id": "04227ce711428479fcba1d799acbb1f5",
+                        "passes": 6,
+                        "fails": 0,
+                        "name": "submit claim returns a claimId",
+                        "path": "::claims: submit::submit claim returns a claimId"
+                    }
+                },
+                "name": "claims: submit",
+                "path": "::claims: submit",
+                "id": "6e6170a7fde71204a3aa7af00c3d2f27",
+                "groups": {}
+            },
+            "admin: dashboard stats": {
+                "name": "admin: dashboard stats",
+                "path": "::admin: dashboard stats",
+                "id": "44aca65fc8d8a862af6d1258a650abdb",
+                "groups": {},
+                "checks": {
+                        "login status is 200": {
+                            "name": "login status is 200",
+                            "path": "::admin: dashboard stats::login status is 200",
+                            "id": "200ceab89c4277de9db01ddbfe08dfa7",
+                            "passes": 6,
+                            "fails": 0
+                        },
+                        "login returns a user id": {
+                            "name": "login returns a user id",
+                            "path": "::admin: dashboard stats::login returns a user id",
+                            "id": "b801d51d135c1befb41d0f7a655d9e96",
+                            "passes": 6,
+                            "fails": 0
+                        },
+                        "dashboard stats status is 200": {
+                            "name": "dashboard stats status is 200",
+                            "path": "::admin: dashboard stats::dashboard stats status is 200",
+                            "id": "055a777f1c3828305e9934fb21bd9006",
+                            "passes": 6,
+                            "fails": 0
+                        },
+                        "dashboard stats returns totals": {
+                            "fails": 0,
+                            "name": "dashboard stats returns totals",
+                            "path": "::admin: dashboard stats::dashboard stats returns totals",
+                            "id": "1ba2a4e3e7f34802c63c132b534402cb",
+                            "passes": 6
+                        }
+                    }
+            }
+        },
+        "checks": {},
+        "name": ""
+    }
+}

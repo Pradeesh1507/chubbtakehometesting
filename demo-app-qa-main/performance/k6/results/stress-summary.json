@@ -1,0 +1,214 @@
+{
+    "root_group": {
+        "name": "",
+        "path": "",
+        "id": "d41d8cd98f00b204e9800998ecf8427e",
+        "groups": {
+            "claims: submit": {
+                "name": "claims: submit",
+                "path": "::claims: submit",
+                "id": "6e6170a7fde71204a3aa7af00c3d2f27",
+                "groups": {},
+                "checks": {
+                        "submit claim status is 201": {
+                            "id": "b0d83df1e102a11f667c5fe60afed45d",
+                            "passes": 1575,
+                            "fails": 0,
+                            "name": "submit claim status is 201",
+                            "path": "::claims: submit::submit claim status is 201"
+                        },
+                        "submit claim returns a claimId": {
+                            "fails": 0,
+                            "name": "submit claim returns a claimId",
+                            "path": "::claims: submit::submit claim returns a claimId",
+                            "id": "04227ce711428479fcba1d799acbb1f5",
+                            "passes": 1575
+                        }
+                    }
+            },
+            "claims: list": {
+                "checks": {
+                    "list claims status is 200": {
+                        "path": "::claims: list::list claims status is 200",
+                        "id": "5a0bdb2cddb419dec6c2302d3dbb0d74",
+                        "passes": 3032,
+                        "fails": 0,
+                        "name": "list claims status is 200"
+                    },
+                    "list claims returns an array": {
+                        "name": "list claims returns an array",
+                        "path": "::claims: list::list claims returns an array",
+                        "id": "33a8dac089196a3f57b61e3ed9dfd5f9",
+                        "passes": 3032,
+                        "fails": 0
+                    }
+                },
+                "name": "claims: list",
+                "path": "::claims: list",
+                "id": "ba23e1be6c5c6ccb23e3ac333a360c0b",
+                "groups": {}
+            },
+            "admin: dashboard stats": {
+                "id": "44aca65fc8d8a862af6d1258a650abdb",
+                "groups": {},
+                "checks": {
+                        "dashboard stats status is 200": {
+                            "path": "::admin: dashboard stats::dashboard stats status is 200",
+                            "id": "055a777f1c3828305e9934fb21bd9006",
+                            "passes": 1087,
+                            "fails": 0,
+                            "name": "dashboard stats status is 200"
+                        },
+                        "dashboard stats returns totals": {
+                            "path": "::admin: dashboard stats::dashboard stats returns totals",
+                            "id": "1ba2a4e3e7f34802c63c132b534402cb",
+                            "passes": 1087,
+                            "fails": 0,
+                            "name": "dashboard stats returns totals"
+                        }
+                    },
+                "name": "admin: dashboard stats",
+                "path": "::admin: dashboard stats"
+            }
+        },
+        "checks": {}
+    },
+    "metrics": {
+        "checks": {
+            "passes": 11388,
+            "fails": 0,
+            "value": 1
+        },
+        "vus_max": {
+            "value": 60,
+            "min": 60,
+            "max": 60
+        },
+        "iteration_duration": {
+            "avg": 1051.635021268001,
+            "min": 1009.4398,
+            "med": 1039.7112499999998,
+            "p(90)": 1098.82439,
+            "p(95)": 1125.879295,
+            "p(99)": 1213.2065519999996,
+            "max": 1390.3854
+        },
+        "data_sent": {
+            "rate": 42853.390494257925,
+            "count": 7751922
+        },
+        "iterations": {
+            "count": 5694,
+            "rate": 31.47699441174777
+        },
+        "http_req_tls_handshaking": {
+            "p(95)": 0,
+            "p(99)": 0,
+            "max": 0,
+            "avg": 0,
+            "min": 0,
+            "med": 0,
+            "p(90)": 0
+        },
+        "data_received": {
+            "count": 868167727,
+            "rate": 4799316.94612553
+        },
+        "http_req_duration": {
+            "avg": 47.05619648876394,
+            "min": 8.3467,
+            "med": 36.244550000000004,
+            "p(90)": 88.3061,
+            "p(95)": 112.92417499999999,
+            "p(99)": 200.11836499999998,
+            "max": 377.9565,
+            "thresholds": {
+                "p(95)<3000": false
+            }
+        },
+        "http_reqs": {
+            "count": 5696,
+            "rate": 31.488050609293172
+        },
+        "group_duration": {
+            "p(99)": 210.37558699999994,
+            "max": 390.0592,
+            "avg": 50.718825816649,
+            "min": 9.103,
+            "med": 38.903999999999996,
+            "p(90)": 97.59592999999998,
+            "p(95)": 122.45838499999998
+        },
+        "http_req_failed": {
+            "passes": 0,
+            "fails": 5696,
+            "thresholds": {
+                "rate<0.10": false
+            },
+            "value": 0
+        },
+        "http_req_connecting": {
+            "p(90)": 0,
+            "p(95)": 0,
+            "p(99)": 0.6478400000000005,
+            "max": 5.6583,
+            "avg": 0.01851120084269663,
+            "min": 0,
+            "med": 0
+        },
+        "http_req_receiving": {
+            "max": 314.3439,
+            "avg": 4.533418890449433,
+            "min": 0,
+            "med": 1.8483,
+            "p(90)": 10.943950000000001,
+            "p(95)": 14.41625,
+            "p(99)": 26.881750000000125
+        },
+        "http_req_duration{expected_response:true}": {
+            "p(90)": 88.3061,
+            "p(95)": 112.92417499999999,
+            "p(99)": 200.11836499999998,
+            "max": 377.9565,
+            "avg": 47.05619648876394,
+            "min": 8.3467,
+            "med": 36.244550000000004
+        },
+        "http_req_sending": {
+            "max": 7.5856,
+            "avg": 0.044792134831460696,
+            "min": 0,
+            "med": 0,
+            "p(90)": 0,
+            "p(95)": 0.5128,
+            "p(99)": 0.8803750000000076
+        },
+        "http_req_waiting": {
+            "med": 32.949799999999996,
+            "p(90)": 78.306,
+            "p(95)": 101.99845,
+            "p(99)": 175.7668900000002,
+            "max": 336.1278,
+            "avg": 42.47798546348308,
+            "min": 8.3467
+        },
+        "vus": {
+            "value": 2,
+            "min": 1,
+            "max": 60
+        },
+        "http_req_blocked": {
+            "med": 0,
+            "p(90)": 0,
+            "p(95)": 0,
+            "p(99)": 1.0233500000000002,
+            "max": 5.6583,
+            "avg": 0.028999016853932576,
+            "min": 0
+        }
+    },
+    "setup_data": {
+        "adminCookie": "access_token=eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI2ZGFITzZMQTM1ZkVrd1JvaWEyZFA5czFCZTcxblhSZVZaUE1YaWg5eTFJIn0.eyJleHAiOjE3OTQ5MjMyNTIsImlhdCI6MTc5NDkyMTQ1MiwianRpIjoib25ydHJvOmQyZTY4YmZlLTI2MmMtN2EyMi05ZjQwLWVmN2M4OThkMTA1NiIsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODE4MC9yZWFsbXMvZGVtby1hcHAiLCJzdWIiOiJhZTFmYzQ2NS1lYzMwLTRiM2EtOGVlNi04ZWQzMjE5NTVhODkiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJkZW1vLWFwcC11aSIsInNpZCI6Il9BTERWZEVWNjJfZGRwOTRfVmFiemM0WSIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiaHR0cDovL2xvY2FsaG9zdDozMDAwIl0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJhZG1pbiJdfSwic2NvcGUiOiJwcm9maWxlIGVtYWlsIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsInJvbGVzIjpbImFkbWluIl0sIm5hbWUiOiJBZG1pbiBVc2VyIiwicHJlZmVycmVkX3VzZXJuYW1lIjoiYWRtaW5AZGVtby5jb20iLCJnaXZlbl9uYW1lIjoiQWRtaW4iLCJmYW1pbHlfbmFtZSI6IlVzZXIiLCJlbWFpbCI6ImFkbWluQGRlbW8uY29tIn0.W3MYc54Nlu-FxcYwobcwaaAC3xXfzpZpBP13toYXKSvNjNouEghnLDbXr8drZL4pNKInhS-So1eZLQGM9OH1WDIv8jLFUL5HmXsedUD2j6BgE8jbNnO7uDb0Vw4r5CD2C3F7vqxSO2JISZBJQ5j4UxuHN7EnnmghZCeiOvVzayOZEpPSKl-oGVsSKHe3Ri74ZdSyaPsH56Vw477x77kHDlXMsbe0CjsEoPvD9BnTfiUyxUIn98Z-sUMBdqu4pcpru-QrQSN9qQrGhPTmzcqFPoxAscjPDet0rqb5qc-fHi-a9VZ5cSh-vFaBZWHkO_DAgM0dm-LS12O_OovIDD3k-w",
+        "claimantCookie": "access_token=eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI2ZGFITzZMQTM1ZkVrd1JvaWEyZFA5czFCZTcxblhSZVZaUE1YaWg5eTFJIn0.eyJleHAiOjE3OTQ5MjMyNTIsImlhdCI6MTc5NDkyMTQ1MiwianRpIjoib25ydHJvOjVmNTQ2OTYwLWNiZWYtNWM0Zi1mMmE0LTYwZjA2YjkwNDk2NCIsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODE4MC9yZWFsbXMvZGVtby1hcHAiLCJzdWIiOiJhZDNmNzZiNS0xOTUyLTQxMTgtOWExYi02ODNiYWFjMTQxZGUiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJkZW1vLWFwcC11aSIsInNpZCI6InFKYW1ETmZSaDdYWTRTeUg4LVlsUmczdiIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiaHR0cDovL2xvY2FsaG9zdDozMDAwIl0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJjbGFpbWFudCJdfSwic2NvcGUiOiJwcm9maWxlIGVtYWlsIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsInJvbGVzIjpbImNsYWltYW50Il0sIm5hbWUiOiJUZXN0IENsYWltYW50IiwicHJlZmVycmVkX3VzZXJuYW1lIjoiY2xhaW1hbnRAZGVtby5jb20iLCJnaXZlbl9uYW1lIjoiVGVzdCIsImZhbWlseV9uYW1lIjoiQ2xhaW1hbnQiLCJlbWFpbCI6ImNsYWltYW50QGRlbW8uY29tIn0.JMJ_zxirKtCQF-LUkEneAuFYVTXhAy-weSi59bicznc8JPKxjKS4BjoPFFnDEr7RQaSnEfLGZC1-BIyV6fNsnvlLfAYipRGA8pfgdcNaEcQiGndBwisxM6QyfDvsGwXl0II6-UH3oXen6jNOjsu77T-PTBqdSn4yTbmdCuXuCgK0kdC_v-QW0aZ4otbNXi5bsMpx9bcTNwP9YmKhC1gOQ1nNRN_2CdHGoK0twKrQAHyOJxU5VfbZGPNpql1bQKvrxCk4otAxSJ5P-QG4l_j-79qedl5nbfy2wMP0r3DvuFQ8iLR8yadUS2f2ZtXJY6I_-5Ae1SlAytgkCSBmPgNmSg"
+    }
+}

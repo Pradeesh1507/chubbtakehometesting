@@ -1,0 +1,218 @@
+{
+    "metrics": {
+        "http_req_waiting": {
+            "p(50)": 17.0012,
+            "p(90)": 55.36066,
+            "p(95)": 58.401599999999995,
+            "max": 383.8821,
+            "avg": 24.386027810650862,
+            "min": 9.5377,
+            "med": 17.0012
+        },
+        "http_reqs": {
+            "count": 845,
+            "rate": 7.576825606562348
+        },
+        "http_req_blocked": {
+            "max": 12.4822,
+            "avg": 0.03925633136094675,
+            "min": 0,
+            "med": 0,
+            "p(50)": 0,
+            "p(90)": 0,
+            "p(95)": 0
+        },
+        "http_req_tls_handshaking": {
+            "p(50)": 0,
+            "p(90)": 0,
+            "p(95)": 0,
+            "max": 0,
+            "avg": 0,
+            "min": 0,
+            "med": 0
+        },
+        "iteration_duration": {
+            "avg": 1025.903625385527,
+            "min": 1011.3183,
+            "med": 1018.9825,
+            "p(50)": 1018.9825,
+            "p(90)": 1056.59152,
+            "p(95)": 1059.49483,
+            "max": 1284.8145
+        },
+        "data_sent": {
+            "count": 1147975,
+            "rate": 10293.49866945966
+        },
+        "http_req_sending": {
+            "med": 0,
+            "p(50)": 0,
+            "p(90)": 0,
+            "p(95)": 0,
+            "max": 1.0398,
+            "avg": 0.01778852071005917,
+            "min": 0
+        },
+        "http_req_duration{expected_response:true}": {
+            "max": 383.8821,
+            "avg": 25.24797384615385,
+            "min": 9.9566,
+            "med": 17.8129,
+            "p(50)": 17.8129,
+            "p(90)": 55.96688,
+            "p(95)": 59.0097
+        },
+        "http_req_connecting": {
+            "min": 0,
+            "med": 0,
+            "p(50)": 0,
+            "p(90)": 0,
+            "p(95)": 0,
+            "max": 1.5751,
+            "avg": 0.014964615384615384
+        },
+        "data_received": {
+            "rate": 213799.20656970714,
+            "count": 23843802
+        },
+        "group_duration": {
+            "avg": 25.3592206405694,
+            "min": 10.9773,
+            "med": 18.4535,
+            "p(50)": 18.4535,
+            "p(90)": 56.03528,
+            "p(95)": 59.20128,
+            "max": 284.3786
+        },
+        "http_req_receiving": {
+            "avg": 0.8441575147928985,
+            "min": 0,
+            "med": 0.6381,
+            "p(50)": 0.6381,
+            "p(90)": 1.6147000000000005,
+            "p(95)": 2.13102,
+            "max": 22.6398
+        },
+        "vus": {
+            "min": 1,
+            "max": 10,
+            "value": 1
+        },
+        "vus_max": {
+            "min": 10,
+            "max": 10,
+            "value": 10
+        },
+        "http_req_duration": {
+            "med": 17.8129,
+            "p(50)": 17.8129,
+            "p(90)": 55.96688,
+            "p(95)": 59.0097,
+            "max": 383.8821,
+            "avg": 25.24797384615385,
+            "min": 9.9566,
+            "thresholds": {
+                "p(95)<800": false,
+                "p(99)<1500": false
+            }
+        },
+        "http_req_failed": {
+            "passes": 0,
+            "fails": 845,
+            "thresholds": {
+                "rate<0.01": false
+            },
+            "value": 0
+        },
+        "iterations": {
+            "count": 843,
+            "rate": 7.55889229151723
+        },
+        "checks": {
+            "passes": 1686,
+            "fails": 0,
+            "thresholds": {
+                "rate>0.99": false
+            },
+            "value": 1
+        }
+    },
+    "setup_data": {
+        "adminCookie": "access_token=eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI2ZGFITzZMQTM1ZkVrd1JvaWEyZFA5czFCZTcxblhSZVZaUE1YaWg5eTFJIn0.eyJleHAiOjE3OTQ5MjMxMzQsImlhdCI6MTc5NDkyMTMzNCwianRpIjoib25ydHJvOjFkODk1YWJmLTY4YjYtNTFkNi0zODljLTgyYWQzNjU0M2I1ZSIsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODE4MC9yZWFsbXMvZGVtby1hcHAiLCJzdWIiOiJhZTFmYzQ2NS1lYzMwLTRiM2EtOGVlNi04ZWQzMjE5NTVhODkiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJkZW1vLWFwcC11aSIsInNpZCI6IlRCVEgyVml5OXNxWGdFUkVzX3VHSmpxdSIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiaHR0cDovL2xvY2FsaG9zdDozMDAwIl0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJhZG1pbiJdfSwic2NvcGUiOiJwcm9maWxlIGVtYWlsIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsInJvbGVzIjpbImFkbWluIl0sIm5hbWUiOiJBZG1pbiBVc2VyIiwicHJlZmVycmVkX3VzZXJuYW1lIjoiYWRtaW5AZGVtby5jb20iLCJnaXZlbl9uYW1lIjoiQWRtaW4iLCJmYW1pbHlfbmFtZSI6IlVzZXIiLCJlbWFpbCI6ImFkbWluQGRlbW8uY29tIn0.Bx-bwgAxzNUdrTQFBP4lsg4QHYAWYUeEoHUqLbZRt7dSW_t0dZsTOl4QrEhQwpArwBKhPZu9xQ1cMRswdKdc95ElsD2TmAgJoJOcmqXQOK4RZaLMqKLvjN2oFMtRznMmc9e-3tyz15HxmpTkwJqYgIouLRhDLKZxRxKIgM7HHmEZcWeLblY3IbPMirQVpFjGL1dmRZvbW8BZ1d2oqI84cB1Tiuag5XhyN3a1yKOTJDC-seewWihPDPAugrG2UNLmRt55sebfNlDybWIcw5ZdvqZAHzXv38cS797D3prHgz8BLRExoqGSTmvrtMd3Ee_rP8jgp-IOkX2NLeNT65lCxQ",
+        "claimantCookie": "access_token=eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI2ZGFITzZMQTM1ZkVrd1JvaWEyZFA5czFCZTcxblhSZVZaUE1YaWg5eTFJIn0.eyJleHAiOjE3OTQ5MjMxMzMsImlhdCI6MTc5NDkyMTMzMywianRpIjoib25ydHJvOjk1NzMwYWZhLWY3ODQtMTc0Ni0zYTdlLTVkNjhjYWZmZjNkOSIsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODE4MC9yZWFsbXMvZGVtby1hcHAiLCJzdWIiOiJhZDNmNzZiNS0xOTUyLTQxMTgtOWExYi02ODNiYWFjMTQxZGUiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJkZW1vLWFwcC11aSIsInNpZCI6IkNRS0Uyd2FXUlFsbGNlbTdyMjhkUkNHSCIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiaHR0cDovL2xvY2FsaG9zdDozMDAwIl0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJjbGFpbWFudCJdfSwic2NvcGUiOiJwcm9maWxlIGVtYWlsIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsInJvbGVzIjpbImNsYWltYW50Il0sIm5hbWUiOiJUZXN0IENsYWltYW50IiwicHJlZmVycmVkX3VzZXJuYW1lIjoiY2xhaW1hbnRAZGVtby5jb20iLCJnaXZlbl9uYW1lIjoiVGVzdCIsImZhbWlseV9uYW1lIjoiQ2xhaW1hbnQiLCJlbWFpbCI6ImNsYWltYW50QGRlbW8uY29tIn0.h_eEJ757-9sYzi3j33EjlxdNdI4Eb_T_5yWzzlknW8davEwi23ev3VsWGX8aYQLgsoDkbm-zIrK8HWNIC_U7C1rNzbR58uiGvJ0vDCAhKUGhkBFeEL4qd4MWPlwKZTHdfVCaTTstXARwNtH7JFavicyCkh9XRU8yY3W904eyRSwm0Oh3-dzBg9ZfZQgOqgJZ13ZohYVoXxWAH_IMJUyp7x_ryhZYqF4PGAZw-hkiruEKbcwZcVL5vDIHV3ItdUNJBiLRqbOaOXIaTrMLKnZ89ACF7CU2fez4keZNKJvn0KCysDc11zcvTXko3YMH-6Qi-pgOuBMu12YYF4F37BFXkQ"
+    },
+    "root_group": {
+        "checks": {},
+        "name": "",
+        "path": "",
+        "id": "d41d8cd98f00b204e9800998ecf8427e",
+        "groups": {
+                "claims: list": {
+                    "name": "claims: list",
+                    "path": "::claims: list",
+                    "id": "ba23e1be6c5c6ccb23e3ac333a360c0b",
+                    "groups": {},
+                    "checks": {
+                            "list claims status is 200": {
+                                "name": "list claims status is 200",
+                                "path": "::claims: list::list claims status is 200",
+                                "id": "5a0bdb2cddb419dec6c2302d3dbb0d74",
+                                "passes": 442,
+                                "fails": 0
+                            },
+                            "list claims returns an array": {
+                                "name": "list claims returns an array",
+                                "path": "::claims: list::list claims returns an array",
+                                "id": "33a8dac089196a3f57b61e3ed9dfd5f9",
+                                "passes": 442,
+                                "fails": 0
+                            }
+                        }
+                },
+                "claims: submit": {
+                    "name": "claims: submit",
+                    "path": "::claims: submit",
+                    "id": "6e6170a7fde71204a3aa7af00c3d2f27",
+                    "groups": {},
+                    "checks": {
+                            "submit claim status is 201": {
+                                "passes": 227,
+                                "fails": 0,
+                                "name": "submit claim status is 201",
+                                "path": "::claims: submit::submit claim status is 201",
+                                "id": "b0d83df1e102a11f667c5fe60afed45d"
+                            },
+                            "submit claim returns a claimId": {
+                                "id": "04227ce711428479fcba1d799acbb1f5",
+                                "passes": 227,
+                                "fails": 0,
+                                "name": "submit claim returns a claimId",
+                                "path": "::claims: submit::submit claim returns a claimId"
+                            }
+                        }
+                },
+                "admin: dashboard stats": {
+                    "name": "admin: dashboard stats",
+                    "path": "::admin: dashboard stats",
+                    "id": "44aca65fc8d8a862af6d1258a650abdb",
+                    "groups": {},
+                    "checks": {
+                            "dashboard stats status is 200": {
+                                "fails": 0,
+                                "name": "dashboard stats status is 200",
+                                "path": "::admin: dashboard stats::dashboard stats status is 200",
+                                "id": "055a777f1c3828305e9934fb21bd9006",
+                                "passes": 174
+                            },
+                            "dashboard stats returns totals": {
+                                "name": "dashboard stats returns totals",
+                                "path": "::admin: dashboard stats::dashboard stats returns totals",
+                                "id": "1ba2a4e3e7f34802c63c132b534402cb",
+                                "passes": 174,
+                                "fails": 0
+                            }
+                        }
+                }
+            }
+    }
+}

@@ -1,0 +1,147 @@
+Act as a Senior Java QA Automation Engineer. Your task is to stabilize the existing Claims Service test suite, fix all identified test issues, execute the complete test suite, and produce a final validation report.
+
+## Project Context
+
+- Project: Insurance Claims Management
+- Module: `code/claims-service`
+- Java: 21
+- Maven: 3.9.8
+- Framework: Spring Boot 4, JUnit 5, Mockito, AssertJ
+- Integration testing: Testcontainers
+- Architecture: Hexagonal architecture, domain events, Kafka, PostgreSQL, Redis and optional Debezium CDC.
+The repository already contains unit tests, integration tests and architecture tests. Preserve and improve the existing implementation. Do not create duplicate tests unnecessarily.
+
+## 1. Fix all known test issues
+Previously identified issues:
+
+### A. UpdateClaimStatusUseCaseTest
+A constructor dependency mismatch was fixed by adding the missing `ApplicationEventPublisher` mock.
+
+Verify that this fix remains correct.
+
+### B. KafkaDomainEventPublisherTest
+A mocked ObjectMapper returned null from `createObjectNode()`, causing a NullPointerException.
+
+The test was changed to use a real ObjectMapper while retaining mocks for external dependencies.
+
+Verify the fix and ensure the serialization-failure test still genuinely tests serialization failure. Do not remove or weaken that test.
+
+### C. CreateClaimUseCaseTest
+The test `should_PublishClaimSubmittedEvent_When_ClaimCreated` fails because:
+
+- Mockito does not process Spring's `@Value` annotation.
+- `cdcEnabled` therefore defaults to false.
+- In direct event-publishing mode, the use case publishes events through ApplicationEventPublisher and clears the claim's domain event collection.
+- The test incorrectly checks that the returned claim still contains events.
+Correct this test by keeping it a Mockito unit test and explicitly verifying that `ApplicationEventPublisher.publishEvent()` receives a ClaimSubmitted event.
+
+Do not convert the entire class to `@SpringBootTest` just to inject one property.
+
+Verify both CDC-enabled and CDC-disabled behaviour where practical, without introducing unnecessary integration-test complexity.
+
+## 2. Perform a complete test-suite review
+Inspect the existing test classes and identify:
+
+- Incorrect Mockito setup.
+- Missing mocks or constructor dependencies.
+- Invalid assertions.
+- Tests that pass without actually verifying behaviour.
+- Incorrect event handling assumptions.
+- Test data and fixture problems.
+- Test isolation issues.
+- Integration tests that require Docker or external infrastructure.
+Fix genuine test defects.
+
+Do not:
+
+- Modify production code merely to make tests pass.
+- Delete failing tests.
+- Skip tests.
+- Add broad exception handling to hide failures.
+- Replace meaningful assertions with weaker assertions.
+- Change business logic without clear evidence of a production defect.
+- Hardcode environment-specific credentials.
+- Report expected results as actual results.
+If a failure is caused by production code, explain the defect and make the smallest justified correction. Clearly document every production-code change.
+
+## 3. Execute validation
+Use the current Java 21 and Maven environment.
+
+Run these commands from `code/claims-service`:
+
+1. Targeted validation:
+`mvn test "-Dtest=UpdateClaimStatusUseCaseTest"`
+
+`mvn test "-Dtest=KafkaDomainEventPublisherTest"`
+
+`mvn test "-Dtest=CreateClaimUseCaseTest"`
+
+1. Complete suite:
+`mvn clean test`
+
+1. If integration tests require Docker/Testcontainers, verify Docker availability and run them where possible.
+Do not skip integration tests silently. If infrastructure is unavailable, document exactly which tests could not run and why.
+
+If any test fails:
+
+- Read the complete failure.
+- Identify the root cause.
+- Fix it.
+- Rerun the affected test.
+- Continue until the suite passes or remaining blockers are clearly documented.
+Do not stop after the first failure.
+
+## 4. Review test quality
+Check that the tests validate meaningful outcomes:
+
+- Claim creation and validation.
+- Claim status transitions.
+- User-not-found handling.
+- Domain event creation and publication.
+- Kafka event envelope construction and serialization.
+- Repository persistence.
+- Integration behaviour.
+- Architecture constraints.
+Avoid duplicate tests where equivalent coverage already exists.
+
+## 5. Produce final documentation
+Create or update:
+
+`docs/CLAIMS_SERVICE_FINAL_VALIDATION_REPORT.md`
+
+Include:
+
+1. Environment details (Java, Maven, OS).
+2. Initial failures identified.
+3. Root causes.
+4. Files changed.
+5. Production-code changes, if any.
+6. Tests executed.
+7. Actual test counts: passed, failed, errors, skipped.
+8. Integration tests requiring Docker or other infrastructure.
+9. Remaining risks and limitations.
+10. Final build status.
+Update `.claude/ai-journal.md` with a consolidated session entry describing the implementation, test execution, failures encountered, fixes, and validation evidence.
+
+Preserve existing reports and journal history. Do not overwrite previous assessment documents.
+
+## 6. Final response
+Give me a concise summary containing:
+
+- All issues fixed.
+- Files changed.
+- Total tests executed.
+- Passed/failed/skipped counts.
+- Full Maven build result.
+- Any remaining blockers.
+- Exact commands I can use to demonstrate the result during my interview.
+
+## Completion criteria
+The task is complete only when:
+
+- All identified issues have been addressed.
+- Targeted tests have been executed.
+- The full test suite has been executed.
+- Actual results have been documented.
+- Remaining failures or infrastructure limitations are transparently reported.
+Work directly in the existing repository. Prioritize a reliable, working test suite over creating more documentation or prompts.
